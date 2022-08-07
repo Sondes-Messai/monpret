@@ -1,0 +1,92 @@
+
+.wizard-card {
+    margin-bottom: 10px;
+    overflow: hidden;
+    color: #455A64;
+    padding-left: 0px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.wizard-card li {
+    list-style-type: none;
+    flex: 1;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+.wizard-card #step1:before {
+    content: "1";
+}
+
+.wizard-card #step2:before {
+    content: "2";
+}
+
+.wizard-card #step3:before {
+    content: "3";
+}
+.wizard-card #step4:before {
+    content: "4";
+}
+.wizard-card #step5:before {
+    content: "5";
+}
+.wizard-card #step6:before {
+    content: "6";
+}
+
+.wizard-card li:before {
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: #455A64;
+    border-radius: 50%;
+    margin: auto;
+    color: #fff;
+}
+
+.wizard-card li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #455A64;
+    position: absolute;
+    left: 0;
+    top: 21px;
+    z-index: -1
+}
+
+.wizard-card li:last-child:after {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    left: -50%
+}
+
+.wizard-card li:first-child:after {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    left: 50%
+}
+
+.wizard-card li:last-child:after {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px
+}
+
+.wizard-card li:first-child:after {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px
+}
+
+.wizard-card li.active:before,
+.wizard-card li.active:after {
+    background: red
+}

@@ -1,0 +1,28 @@
+.app-form-radio label {
+    align-items: center;
+    background-color: #fff;
+    border: 3px solid #ff9600;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #000;
+    display: block;
+    display: -ms-flex;
+    display: flex;
+    height: 50px;
+    -ms-justify-content: center;
+    justify-content: center;
+    line-height: 1.2;
+    padding: 0 5px;
+    position: relative;
+    text-decoration: none;
+    transition-duration: .4s;
+
+}
+.app-form-radio .active {
+    background-color: #ff9600;
+    color: #fff;
+}
+
+.app-form-radio input {
+    display: none;
+}
