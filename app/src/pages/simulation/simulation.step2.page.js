@@ -10,7 +10,7 @@ const SimulationStepTwo = ({ formData, handleFormData }) => {
     <div>
       {formData.aveccoemprunteur ? formData.aveccoemprunteur : false}
       <fieldset className="mb-3">
-        <legend className="w-auto text-left">Information emprenteur</legend>
+        <legend className="w-auto text-left">Information emprunteur</legend>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridNom">
             <Form.Label>Nom </Form.Label>
@@ -76,7 +76,7 @@ const SimulationStepTwo = ({ formData, handleFormData }) => {
       <fieldset
         className={"mb-3 " + (formData.aveccoemprunteur ? "" : "d-none")}
       >
-        <legend className="w-auto text-left">Information co-emprenteur</legend>
+        <legend className="w-auto text-left">Information co-emprunteur</legend>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridNom">
             <Form.Label>Nom </Form.Label>

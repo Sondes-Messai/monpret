@@ -3,8 +3,8 @@ import Config from "../config/service.config";
 
 const baseService = axios.create({ baseURL: Config.API_URL });
 baseService.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
-  if (token) config.headers["Authorization"] = "Bearer " + token;
+  const user = localStorage.getItem("state");
+  if (user) config.headers["Authorization"] = "Bearer " + JSON.parse(user).token;
   return config;
 });
 

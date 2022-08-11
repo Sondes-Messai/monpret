@@ -12,8 +12,29 @@ const login = async (username, password) => {
   });
 }
 
-const logout = () => {
-  localStorage.removeItem("token");
+const logoutUser = () => {
+  localStorage.removeItem("state");
 }
 
-export default { signup, login, logout };
+const getUser = () => {
+  try {
+    const serializedState = localStorage.getItem("state");
+    if (serializedState === null) {
+      return undefined;
+    }
+    return JSON.parse(serializedState);
+  } catch (err) {
+    return undefined;
+  }
+};
+
+const saveUser = (user) => {
+  try {
+    const serializedState = JSON.stringify(user);
+    localStorage.setItem("state", serializedState);
+  } catch (err) {
+    //ignoring write erros
+  }
+};
+
+export default { signup, login, logoutUser, getUser, saveUser };

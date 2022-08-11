@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Simulation;
+use App\Entity\User;
 
 /**
  * @Route("/api/simulation", name="simulation")
@@ -20,13 +21,15 @@ class SimulationController extends AbstractController
 {
   private $manager;
   private $repository;
-  // private $tokenStorage;
+  //private $tokenStorage;
 
-  public function __construct(EntityManagerInterface $manager, ValidatorInterface $validator)
+  public function __construct(EntityManagerInterface $manager, ValidatorInterface $validator)//, TokenStorageInterface $tokenStorage)
   {
     $this->manager      = $manager;
     $this->repository   = $manager->getRepository(Simulation::class);
     $this->validator    = $validator;
+    //$this->userrepository   = $manager->getRepository(User::class);
+    //$this->tokenStorage = $tokenStorage;
   }
 
   /**
@@ -43,6 +46,7 @@ class SimulationController extends AbstractController
    */
   public function createSimulation(Request $request)
   {
+    $user = $this->tokenStorage->getToken()->getUser();
     $data = json_decode($request->getContent(), true);
 
     $constraints = new Assert\Collection([
@@ -71,12 +75,32 @@ class SimulationController extends AbstractController
 
       'duree' =>  [new Assert\NotBlank()],
       'budget' => [new Assert\NotBlank()],
-      'apport' => [new Assert\NotBlank()]
+      'apport' => [new Assert\NotBlank()],
+
+      'taux' =>  [],
+      'tauxAssurance' =>  [],
+      'labelProjetImmobilier' =>  [],
+      'labelTypeBien' =>  [],
+      'labelNatureBien' =>  [],
+      'interetAnnuel' =>  [],
+      'interetAssurance' =>  [],
+      'periode' =>  [],
+      'montantProjet' =>  [],
+      'montantApport' =>  [],
+      'montantCredit' =>  [],
+      'interetValue' =>  [],
+      'montantMensualite' =>  [],
+      'montantTotalCredit' =>  [],
+      'montantTotalInterets' =>  [],
+
     ]);
+
+
 
     $errors = $this->validator->validate($data, $constraints);
     if (count($errors) > 0) 
       return new Response($errors);
+
 
     /*
     $adresse = new Address();
@@ -118,7 +142,9 @@ class SimulationController extends AbstractController
     $simulation->coemprunteur_revenu = $data['coemprunteur_revenu'];
 */
 
-    $user = $this->repository->findOneBy(["username" => $data['emprunteur_email']]);
+    //$user_repository = $this->manager->getRepository(User::class);
+    //$user = $user_repository->findOneBy(['id' => $user->getId()]);
+    $user = $this->userrepository->findOneBy(["username" => $data['emprunteur_email']]);
     if ($user) {
       $simulation->User = $user;
     }

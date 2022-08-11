@@ -1,4 +1,15 @@
 import React, { Component } from "react";
+
+import { Navigate, useNavigate } from "react-router-dom";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Form,
+  FormGroup,
+  FormControl,
+} from "react-bootstrap";
 import RadioCardComponent from "../../components/radiocard/radiocard.component";
 import StepWizardComponent from "../../components/stepwizard/stepwizard.component";
 
@@ -36,14 +47,36 @@ const steps = [
 ];
 /**/
 export default class SimulationPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { simulation: null, error: null };
+  }
+
   handleSubmit = (formData) => {
-    console.log(formData);
-
-    SimulationService.createSimulation(formData);
-
-
+    try {
+      SimulationService.createSimulation(formData).then((response) => {
+        this.setState({ simulation: formData });
+        console.log(formData);
+      });
+    } catch (error) {
+      this.setState({ error });
+    }
   };
   render() {
-    return <StepWizardComponent steps={steps} handleSubmit={this.handleSubmit} />;
+    let { simulation, error } = this.state;
+    return (
+      <Container>
+        <Row className="my-3 p-3 bg-white rounded box-shadow">
+          <div className="section-title text-center">
+            <h2>
+            Simulateur <span>crédit immobilier</span>
+            </h2>
+          </div>
+          {error && <p>{error.message}</p>}
+          {simulation && <Navigate to="/simulations" replace={true} />}
+          <StepWizardComponent steps={steps} handleSubmit={this.handleSubmit} />
+        </Row>
+      </Container>
+    );
   }
 }
