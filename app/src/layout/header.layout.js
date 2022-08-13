@@ -29,7 +29,7 @@ function Header() {
     <Navbar bg="white" expand="lg" className="p-4 border-bottom">
       <Container>
         <Navbar.Brand href="">
-          <strong>Mon prêt</strong>
+          <strong>Si claire</strong>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -64,7 +64,7 @@ function Header() {
                 <Nav.Link href="Simulation">
                   Simulateur crédit immobilier
                 </Nav.Link>
-                <Nav.Link href="faq">Questions</Nav.Link>
+               
                 <Nav.Link href="contact">Contact</Nav.Link>
                 <Nav.Link href="sign-in">Se conneter</Nav.Link>
                 <Nav.Link href="sign-up">Sign up</Nav.Link>

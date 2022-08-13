@@ -25,7 +25,7 @@ function Body() {
       <Routes>
         <Route exact path="/home" element={<HomePage />} />
         <Route exact path="/" element={<HomePage />} />
-        <Route path="/faq" element={<FaqPage />} />
+      
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/sign-in" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
