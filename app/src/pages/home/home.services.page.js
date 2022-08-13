@@ -28,28 +28,25 @@ export default class HomeServices extends Component {
           <CardGroup>
             <Card>
               <Card.Body>
-                <Card.Title>Consultancy</Card.Title>
+                <Card.Title>Souscrivez</Card.Title>
                 <Card.Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                  interdum ante vel aliquet.
+                  Souscription immédiate en quelques clics seulement.
                 </Card.Text>
               </Card.Body>
             </Card>
             <Card>
               <Card.Body>
-                <Card.Title>Consultancy</Card.Title>
+                <Card.Title>Si claire</Card.Title>
                 <Card.Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                  interdum ante vel aliquet.
+                Plusieure utilisateurs nous ont déjà fait confiance.
                 </Card.Text>
               </Card.Body>
             </Card>
             <Card>
               <Card.Body>
-                <Card.Title>Consultancy</Card.Title>
+                <Card.Title>Économisez</Card.Title>
                 <Card.Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                  interdum ante vel aliquet.
+                +50 partenaires vous proposent les meilleures offres.
                 </Card.Text>
               </Card.Body>
             </Card>

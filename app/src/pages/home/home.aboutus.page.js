@@ -16,14 +16,14 @@ export default class HomeAboutUs extends Component {
             </h2>
             <div></div>
           </div>
-          <Col md={6} sm={9} xs={9}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-            interdum ante vel aliquet. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Cras interdum ante vel aliquet. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Cras interdum ante vel
-            aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Cras interdum ante vel aliquet. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Cras interdum ante vel aliquet.
+          <Col md={9} sm={9} xs={9}>
+            
+           Les frais bancaires et les financements pour un projet ou un bien sont souvent des démarches longues et compliquées.
+            Pour y voir plus clair et gagner du temps, Si claire.fr vous conseille et vous donne la possibilité de comparer les banques,
+            crédits à la consommation, 
+            crédits immobiliers, 
+            assurances emprunteurs, 
+            rachats de crédit et produits d’épargne 
           </Col>
         </Row>
       </Container>

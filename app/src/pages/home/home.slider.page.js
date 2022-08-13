@@ -35,8 +35,7 @@ export default class HomeSlider extends Component {
             <Carousel.Caption>
               <h1>Vous avez besoin d'un prêt</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                interdum ante vel aliquet.
+               Comparez et faites des économies sur tous vos contrats.
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -51,8 +50,7 @@ export default class HomeSlider extends Component {
             <Carousel.Caption>
               <h1>Nous vous aidons</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                interdum ante vel aliquet.
+                pour faire le bon choix,.
               </p>
             </Carousel.Caption>
           </Carousel.Item>
